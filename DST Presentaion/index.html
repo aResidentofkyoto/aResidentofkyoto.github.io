@@ -1,0 +1,300 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+
+    <title></title>
+    <link rel="stylesheet" href="dist/reveal.css" />
+    <link rel="stylesheet" href="dist/theme/black.css" id="theme" />
+    <link rel="stylesheet" href="plugin/highlight/zenburn.css" />
+	<link rel="stylesheet" href="css/layout.css" />
+	<link rel="stylesheet" href="plugin/customcontrols/style.css">
+	<link rel="stylesheet" href="plugin/chalkboard/style.css">
+
+	<link rel="stylesheet" href="plugin/reveal-pointer/pointer.css" />
+
+
+    <script defer src="dist/fontawesome/all.min.js"></script>
+
+	<script type="text/javascript">
+		var forgetPop = true;
+		function onPopState(event) {
+			if(forgetPop){
+				forgetPop = false;
+			} else {
+				parent.postMessage(event.target.location.href, "app://obsidian.md");
+			}
+        }
+		window.onpopstate = onPopState;
+		window.onmessage = event => {
+			if(event.data == "reload"){
+				window.document.location.reload();
+			}
+			forgetPop = true;
+		}
+
+		function fitElements(){
+			const itemsToFit = document.getElementsByClassName('fitText');
+			for (const item in itemsToFit) {
+				if (Object.hasOwnProperty.call(itemsToFit, item)) {
+					var element = itemsToFit[item];
+					fitElement(element,1, 1000);
+					element.classList.remove('fitText');
+				}
+			}
+		}
+
+		function fitElement(element, start, end){
+
+			let size = (end + start) / 2;
+			element.style.fontSize = `${size}px`;
+
+			if(Math.abs(start - end) < 1){
+				while(element.scrollHeight > element.offsetHeight){
+					size--;
+					element.style.fontSize = `${size}px`;
+				}
+				return;
+			}
+
+			if(element.scrollHeight > element.offsetHeight){
+				fitElement(element, start, size);
+			} else {
+				fitElement(element, size, end);
+			}		
+		}
+
+
+		document.onreadystatechange = () => {
+			fitElements();
+			if (document.readyState === 'complete') {
+				if (window.location.href.indexOf("?export") != -1){
+					parent.postMessage(event.target.location.href, "app://obsidian.md");
+				}
+				if (window.location.href.indexOf("print-pdf") != -1){
+					let stateCheck = setInterval(() => {
+						clearInterval(stateCheck);
+						window.print();
+					}, 250);
+				}
+			}
+	};
+
+
+        </script>
+  </head>
+  <body>
+    <div class="reveal">
+      <div class="slides"><section  data-markdown><script type="text/template"><!-- .slide: class="drop" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 700px; width: 960px; min-height: 700px; display: flex; flex-direction: column; align-items: center; justify-content: center" absolute="true">
+
+# Day light savings
+## Time lost or not
+<p style="font-size: 0.5em;"><a href="https://commons.wikimedia.org/wiki/File:DST_Countries_Map.png#/media/File:DST_Countries_Map.png"><img src="https://upload.wikimedia.org/wikipedia/commons/1/16/DST_Countries_Map.png" alt="World map. Europe, most of North America, parts of southern South America and southeastern Australia, and a few other places use DST. Most of equatorial Africa and a few other places near the equator have never used DST as the seasons are not marked by drastic changes in light. The rest of the landmass is marked as formerly using DST." height="300vh"></a><br>By <a href="//commons.wikimedia.org/w/index.php?title=User:TimeZonesBoy&amp;action=edit&amp;redlink=1" class="new" title="User:TimeZonesBoy (page does not exist)">TimeZonesBoy</a> - <span class="int-own-work" lang="en">Own work</span>, <a href="https://creativecommons.org/licenses/by-sa/3.0" title="Creative Commons Attribution-Share Alike 3.0">CC BY-SA 3.0</a>, <a href="https://commons.wikimedia.org/w/index.php?curid=17593495">Link</a></p>
+notes: Day light savings. We normally forget it till the 2 hour jump happens.
+</div></script></section><section  data-markdown><script type="text/template"><!-- .slide: class="drop" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 700px; width: 960px; min-height: 700px; display: flex; flex-direction: column; align-items: center; justify-content: center" absolute="true">
+
+# Where DST starts
+<div style="display: flex; font-size: 0.5em;">
+<p style="flex: 50%; padding: 5px;"><a href="https://commons.wikimedia.org/wiki/File:Joseph_Siffrein_Duplessis_-_Benjamin_Franklin_-_Google_Art_Project.jpg#/media/File:Joseph_Siffrein_Duplessis_-_Benjamin_Franklin_-_Google_Art_Project.jpg"><img src="https://upload.wikimedia.org/wikipedia/commons/8/87/Joseph_Siffrein_Duplessis_-_Benjamin_Franklin_-_Google_Art_Project.jpg" alt="Joseph Siffrein Duplessis - Benjamin Franklin - Google Art Project.jpg" height="300vh"></a><br>By <a href="https://en.wikipedia.org/wiki/en:Joseph_Duplessis" class="extiw" title="w:en:Joseph Duplessis"><span title="French painter (1725-1802)">Joseph-Siffred Duplessis</span></a> - <a rel="nofollow" class="external text" href="//www.google.com/culturalinstitute/asset-viewer/ZgEyj5EEKdux-g">ZgEyj5EEKdux-g at Google Cultural Institute</a> maximum zoom level, Public Domain, <a href="https://commons.wikimedia.org/w/index.php?curid=21880454">Link</a></p>
+<p style="flex: 50%; padding: 5px;"><a href="https://commons.wikimedia.org/wiki/File:William-Willett.jpg#/media/File:William-Willett.jpg"><img src="https://upload.wikimedia.org/wikipedia/commons/9/98/William-Willett.jpg" alt="William-Willett.jpg" height="300vh"></a><br>By Sir J. Benjamin Stone (1838–1914) - Cropped from a <a rel="nofollow" class="external text" href="http://www.birmingham.gov.uk/Media?MEDIA_ID=264448">print</a> in the <a rel="nofollow" class="external text" href="http://www.birmingham.gov.uk/GenerateContent?CONTENT_ITEM_ID=90624&amp;CONTENT_ITEM_TYPE=0&amp;MENU_ID=13133">Images from the J. Benjamin Stone Collection</a>, <a rel="nofollow" class="external text" href="http://www.birmingham.gov.uk/GenerateContent?CONTENT_ITEM_ID=1543&amp;CONTENT_ITEM_TYPE=0&amp;MENU_ID=11075">Birmingham Central Library</a>, Public Domain, <a href="https://commons.wikimedia.org/w/index.php?curid=1898480">Link</a></p>
+</div>
+</div></script></section><section  data-markdown><script type="text/template"><!-- .slide: class="drop" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 700px; width: 960px; min-height: 700px; display: flex; flex-direction: column; align-items: center; justify-content: center" absolute="true">
+
+<div style="display: flex; font-size: 0.5em; width:1080px;">
+	<div style="flex:50%; font-size: 0.5em; height:25em; width:20 em; padding:5px; border:none;" >
+		<iframe src="https://www.webexhibits.org//daylightsaving/franklin3.html" style="flex:50%; height:25em; width:30 em; padding:5px; border:none;"></iframe>
+<div class="callout callout-color1">
+<div class="callout-title">
+<div class="callout-icon">
+
+<i class="fas fa-info-circle" ></i>
+
+
+</div>
+<div class="callout-title-inner">
+
+Franklin, B., 1784, Essay on Daylight Saving, Letter to the Editor of the Journal of Paris. In: Nathan G. Goodman (Ed.), The Ingenious Dr. Franklin, Selected Scientific Letters, University of Pennsylvania Press, 1931, pp. 17-22. Available online at http://webexhibits.org/daylightsaving/franklin3.html, last accessed October 2024.
+
+</div>
+</div>
+<div class="callout-content">
+
+</div>
+</div>
+	</div>
+	<div style="flex:50%; font-size: 0.5em; height:25em; width:20 em; padding:5px; border:none;" >
+		<iframe src="https://www.webexhibits.org//daylightsaving/willett.html" style="flex:50%; height:25em; width:30 em; padding:5px; border:none;"></iframe>
+<div class="callout callout-color1">
+<div class="callout-title">
+<div class="callout-icon">
+
+<i class="fas fa-info-circle" ></i>
+
+
+</div>
+<div class="callout-title-inner">
+
+Willett, W., 1907, Pamphlet, Sloane Square, London. In: Essay reprinted in British Time by Donald de Carle, Crosby Lockwood & Son Ltd, London, 1946, pp. 152-157. Available online at http://webexhibits.org/daylightsaving/willett.html, last accessed October 2024.
+
+</div>
+</div>
+<div class="callout-content">
+
+</div>
+</div>
+	</div>
+</div>
+</div></script></section><section  data-markdown><script type="text/template"><!-- .slide: class="drop" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 700px; width: 960px; min-height: 700px; display: flex; flex-direction: column; align-items: center; justify-content: center" absolute="true">
+
+<div style="display: flex; font-size: 0.5em;">
+	<p style="flex: 50%; padding: 5px;"><a href="https://commons.wikimedia.org/wiki/File:Time_zone_map_of_the_United_States_1913_(colorized).png#/media/File:Time_zone_map_of_the_United_States_1913_(colorized).png"><img src="https://upload.wikimedia.org/wikipedia/commons/6/65/Time_zone_map_of_the_United_States_1913_%28colorized%29.png" alt="Time zone map of the United States 1913 (colorized).png" height="359" width="547"></a><br>By <a href="//commons.wikimedia.org/wiki/User:OwenBlacker" title="User:OwenBlacker">OwenBlacker</a> - Own work based on: <a href="//commons.wikimedia.org/wiki/File:Time_zone_map_of_the_United_States_1913.tif" title="File:Time zone map of the United States 1913.tif">Time zone map of the United States 1913.tif</a>, Public Domain, <a href="https://commons.wikimedia.org/w/index.php?curid=39258772">Link</a></p>
+	<p style="flex: 50%; padding: 5px;"><a href="https://commons.wikimedia.org/wiki/File:Saving_Daylight_-_Save_1,000,000_tons_of_coal_NMAH-AC0433-0000103.jpg#/media/File:Saving_Daylight_-_Save_1,000,000_tons_of_coal_NMAH-AC0433-0000103.jpg"><img src="https://upload.wikimedia.org/wikipedia/commons/2/2f/Saving_Daylight_-_Save_1%2C000%2C000_tons_of_coal_NMAH-AC0433-0000103.jpg" alt="Saving Daylight - Save 1,000,000 tons of coal NMAH-AC0433-0000103.jpg" height="359"></a><br>By United Cigar Stores Company - Princeton University Poster Collection at the Smithsonian Online Virtual Archives (<a rel="nofollow" class="external free" href="https://sova.si.edu/">https://sova.si.edu/</a>), Public Domain, <a href="https://commons.wikimedia.org/w/index.php?curid=116132052">Link</a></p>
+  </div>
+</div></script></section><section  data-markdown><script type="text/template"><!-- .slide: class="drop" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 700px; width: 960px; min-height: 700px; display: flex; flex-direction: column; align-items: center; justify-content: center" absolute="true">
+
+<p style="font-size: 0.5em;"><a href="https://commons.wikimedia.org/wiki/File:Map_of_Daylight_Savings_in_the_United_States.svg#/media/File:Map_of_Daylight_Savings_in_the_United_States.svg"><img src="https://upload.wikimedia.org/wikipedia/commons/5/5f/Map_of_Daylight_Savings_in_the_United_States.svg" alt="Map of Daylight Savings in the United States.svg" height="324" width="512"></a><br>By <a href="//commons.wikimedia.org/w/index.php?title=User:Ltbubbas&amp;action=edit&amp;redlink=1" class="new" title="User:Ltbubbas (page does not exist)">Ltbubbas</a> - <span class="int-own-work" lang="en">Own work</span>&nbsp;<span class="mw-valign-text-top" typeof="mw:File/Frameless"><a href="//commons.wikimedia.org/wiki/File:Map_of_Daylight_Savings_in_the_United_States.svg#P7482" title="Edit this at Structured Data on Commons"></a></span>, <a href="https://creativecommons.org/licenses/by-sa/4.0" title="Creative Commons Attribution-Share Alike 4.0">CC BY-SA 4.0</a>, <a href="https://commons.wikimedia.org/w/index.php?curid=110837765">Link</a></p>
+</div></script></section><section  data-markdown><script type="text/template"><!-- .slide: class="drop" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 700px; width: 960px; min-height: 700px; display: flex; flex-direction: column; align-items: center; justify-content: center" absolute="true">
+
+<p style="font-size: 0.5em;"><a href="https://commons.wikimedia.org/wiki/File:DaylightSaving-World-Subdivisions.png#/media/File:DaylightSaving-World-Subdivisions.png"><img src="https://upload.wikimedia.org/wikipedia/commons/2/29/DaylightSaving-World-Subdivisions.png" alt="DaylightSaving-World-Subdivisions.png"></a><br>By Paul Eggert - based on <a href="//commons.wikimedia.org/wiki/File:BlankMap-World-Subdivisions.PNG" title="File:BlankMap-World-Subdivisions.PNG">Image:BlankMap-World-Subdivisions.PNG</a>, plus the data in the <a rel="nofollow" class="external text" href="http://www.twinsun.com/tz/tz-link.htm">tz database</a>, plus data in the maps on the INMS's <a rel="nofollow" class="external text" href="http://inms-ienm.nrc-cnrc.gc.ca/time_services/daylight_saving_e.html">Time Zones &amp; Daylight Saving Time</a> page., <a href="http://creativecommons.org/licenses/by-sa/3.0/" title="Creative Commons Attribution-Share Alike 3.0">CC BY-SA 3.0</a>, <a href="https://commons.wikimedia.org/w/index.php?curid=1688860">Link</a></p>
+</div></script></section><section  data-markdown><script type="text/template"><!-- .slide: class="drop" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 700px; width: 960px; min-height: 700px; display: flex; flex-direction: column; align-items: center; justify-content: center" absolute="true">
+
+# Effects
+</div></script></section><section  data-markdown><script type="text/template"><!-- .slide: class="drop" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 700px; width: 960px; min-height: 700px; display: flex; flex-direction: column; align-items: center; justify-content: center" absolute="true">
+
+## Cancer
+
+<img src="Pasted image 20241023074211.png" alt="" style="object-fit: scale-down">
+</div></script></section></div>
+    </div>
+
+    <script src="dist/reveal.js"></script>
+
+    <script src="plugin/markdown/markdown.js"></script>
+    <script src="plugin/highlight/highlight.js"></script>
+    <script src="plugin/zoom/zoom.js"></script>
+    <script src="plugin/notes/notes.js"></script>
+    <script src="plugin/math/math.js"></script>
+	<script src="plugin/mermaid/mermaid.js"></script>
+	<script src="plugin/chart/chart.min.js"></script>
+	<script src="plugin/chart/plugin.js"></script>
+	<script src="plugin/menu/menu.js"></script>
+	<script src="plugin/customcontrols/plugin.js"></script>
+	<script src="plugin/chalkboard/plugin.js"></script>
+	<script src="plugin/reveal-pointer/pointer.js"></script>
+
+    <script>
+      function extend() {
+        var target = {};
+        for (var i = 0; i < arguments.length; i++) {
+          var source = arguments[i];
+          for (var key in source) {
+            if (source.hasOwnProperty(key)) {
+              target[key] = source[key];
+            }
+          }
+        }
+        return target;
+      }
+
+	  function isLight(color) {
+		let hex = color.replace('#', '');
+
+		// convert #fff => #ffffff
+		if(hex.length == 3){
+			hex = `${hex[0]}${hex[0]}${hex[1]}${hex[1]}${hex[2]}${hex[2]}`;
+		}
+
+		const c_r = parseInt(hex.substr(0, 2), 16);
+		const c_g = parseInt(hex.substr(2, 2), 16);
+		const c_b = parseInt(hex.substr(4, 2), 16);
+		const brightness = ((c_r * 299) + (c_g * 587) + (c_b * 114)) / 1000;
+		return brightness > 155;
+	}
+
+	var bgColor = getComputedStyle(document.documentElement).getPropertyValue('--r-background-color').trim();
+	var isLight = isLight(bgColor);
+
+	if(isLight){
+		document.body.classList.add('has-light-background');
+	} else {
+		document.body.classList.add('has-dark-background');
+	}
+
+      // default options to init reveal.js
+      var defaultOptions = {
+        controls: true,
+        progress: true,
+        history: true,
+        center: true,
+        transition: 'default', // none/fade/slide/convex/concave/zoom
+        plugins: [
+          RevealMarkdown,
+          RevealHighlight,
+          RevealZoom,
+          RevealNotes,
+          RevealMath.MathJax3,
+		  RevealMermaid,
+		  RevealChart,
+		  RevealCustomControls,
+		  RevealMenu,
+	      RevealPointer,
+		  RevealChalkboard, 
+        ],
+
+
+    	allottedTime: 120 * 1000,
+
+		mathjax3: {
+			mathjax: 'plugin/math/mathjax/tex-mml-chtml.js',
+		},
+		markdown: {
+		  gfm: true,
+		  mangle: true,
+		  pedantic: false,
+		  smartLists: false,
+		  smartypants: false,
+		},
+
+		mermaid: {
+			theme: isLight ? 'default' : 'dark',
+		},
+
+		customcontrols: {
+			controls: [
+				{ icon: '<i class="fa fa-pen-square"></i>',
+				title: 'Toggle chalkboard (B)',
+				action: 'RevealChalkboard.toggleChalkboard();'
+				},
+				{ icon: '<i class="fa fa-pen"></i>',
+				title: 'Toggle notes canvas (C)',
+				action: 'RevealChalkboard.toggleNotesCanvas();'
+				},
+			]
+		},
+		menu: {
+			loadIcons: false
+		}
+      };
+
+      // options from URL query string
+      var queryOptions = Reveal().getQueryHash() || {};
+
+      var options = extend(defaultOptions, {"width":960,"height":700,"margin":0.04,"controls":true,"progress":false,"slideNumber":false,"transition":"slide","transitionSpeed":"default"}, queryOptions);
+    </script>
+
+    <script>
+      Reveal.initialize(options);
+    </script>
+  </body>
+
+  <!-- created with Advanced Slides -->
+</html>
